@@ -21,11 +21,14 @@ public class SighController {
 		
 	}
 	
-	
-	// TODO : SighOut
-	public void SighOut() {
+	@RequestMapping("/Modify")
+	public void Modify() {
 		
 	}
+	
+	
+	// TODO : 회원 탈퇴 이름 짓는 게 젤 어려워,, 
+	
 	
 	
 	
