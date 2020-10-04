@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.aniwag.mapper.GPSMapper">
+
+	<insert id="insert">	
+		INSERT INTO tbl_gps (gps_tracker_no, gps_latitude, gps_longitude)
+		VALUES(#{gps_tracker_no}, #{gps_latitude}, #{gps_longitude})		
+	</insert>
+	
+	<select id="getList" resultType="com.aniwag.domain.GPSVO">	
+		SELECT gps_latitude, gps_longitude, gps_time
+		FROM tbl_gps 
+		WHERE gps_tracker_no = #{gps_tracker_no}
+		ORDER BY gps_time desc
+	</select>
+
+
+
+
+</mapper>
