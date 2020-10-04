@@ -9,6 +9,5 @@ public interface SighService {
 	public void SighIn(MemberVO vo);
 	public void Modify(MemberVO vo);
 	
-	
-	
+		
 }
