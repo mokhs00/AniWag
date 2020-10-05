@@ -1,13 +1,13 @@
 package com.aniwag.service;
 
 import com.aniwag.domain.MemberVO;
-import com.aniwag.domain.SighUpDTO;
+import com.aniwag.domain.SignUpDTO;
 
-public interface SighService {
+public interface SignService {
 
-	public void SighUp(SighUpDTO dto);	
-	public void SighIn(MemberVO vo);
-	public void Modify(MemberVO vo);
+	public int SignUp(SignUpDTO dto);	
+	public int SignIn(MemberVO vo);
+	public int Modify(MemberVO vo);
 	
 		
 }

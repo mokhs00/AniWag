@@ -3,7 +3,7 @@ package com.aniwag.domain;
 import lombok.Data;
 
 @Data
-public class SighUpDTO {	
+public class SignUpDTO {	
 	private MemberVO memberVO;
 	private AppVO appVO;	
 }

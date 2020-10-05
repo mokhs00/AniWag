@@ -8,6 +8,7 @@ import lombok.Data;
 public class NotificationDTO {
 
 	private ArrayList<String> registration_ids;
+	@Data
 	class data {
 		private String title;
 		private String text;
