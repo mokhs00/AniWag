@@ -23,8 +23,11 @@ public class RescueServiceImpl implements RescueService {
 	private String ContentType = "application/json; charset=UTF-8";
 	public static final okhttp3.MediaType JSON = okhttp3.MediaType.get("application/json; charset=utf-8");
 
+	private String rescueTitle = "에서 구조요청!!";
+	private String rescueText = "구해주세요!";
+	
 	@Setter(onMethod_ = @Autowired)
-	MemberMapper memberMapper;
+	MemberMapper mapper;
 
 
 	@Override
@@ -32,8 +35,12 @@ public class RescueServiceImpl implements RescueService {
 
 		Gson gson = new Gson();
 
-		NotificationDTO notificationDTO = new NotificationDTO();
-
+		NotificationDTO notificationDTO = new NotificationDTO();		
+		notificationDTO.setRegistration_ids(mapper.getListAppkey(addr2));		
+		notificationDTO.getData().setTitle(addr2);
+		notificationDTO.getData().setText("test");		
+		
+		log.info(notificationDTO);
 		RequestBody body = RequestBody.create(gson.toJson(notificationDTO), JSON);
 
 		OkHttpClient client = new OkHttpClient();
@@ -49,9 +56,10 @@ public class RescueServiceImpl implements RescueService {
 			log.info(response);
 		} catch (Exception e) {
 			log.info("RequestRescue ERROR : " + e);
+			return -1;
 		}
 
-		return 0;
+		return 1;
 	}
 
 }

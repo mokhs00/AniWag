@@ -9,11 +9,11 @@
 		INSERT INTO TBL_MEMBER
 		(mem_id, mem_password, mem_phone, mem_gender,
 		mem_name, mem_email, mem_addr1,
-		mem_addr2, mem_addr3)
+		mem_addr2, mem_addr3, mem_appkey)
 		VALUES
 		(#{mem_id}, #{mem_password}, #{mem_phone}, #{mem_gender},
 		#{mem_name},
-		#{mem_email}, #{mem_addr1}, #{mem_addr2}, #{mem_addr3})
+		#{mem_email}, #{mem_addr1}, #{mem_addr2}, #{mem_addr3}, #{mem_appkey})
 	</insert>
 
 	<select id="read" resultType="com.aniwag.domain.MemberVO">
@@ -25,7 +25,7 @@
 		UPDATE TBL_MEMBER
 		SET mem_password = #{mem_password}, mem_phone = #{mem_phone},
 		mem_gender = #{mem_gender}, mem_name = #{mem_name}, mem_email = #{mem_email}, 
-		mem_addr1 =	#{mem_addr1}, mem_addr2 = #{mem_addr2}, mem_addr3 = #{mem_addr3}
+		mem_addr1 =	#{mem_addr1}, mem_addr2 = #{mem_addr2}, mem_addr3 = #{mem_addr3}, mem_appkey = #{mem_appkey}
 		WHERE mem_id = #{mem_id}
 	</update>
 
@@ -35,5 +35,12 @@
 		WHERE mem_id = #{mem_id}
 	
 	</delete>	
+	
+	<select id="getListAppkey" resultType="String">
+		SELECT mem_appkey 
+		FROM tbl_member
+		WHERE mem_addr2 = #{mem_addr2}
+	
+	</select>
 
 </mapper>
