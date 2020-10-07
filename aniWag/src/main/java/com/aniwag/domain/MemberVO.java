@@ -14,4 +14,5 @@ public class MemberVO {
 	private String mem_addr1;
 	private String mem_addr2;
 	private String mem_addr3;
+	private String mem_appkey;
 }

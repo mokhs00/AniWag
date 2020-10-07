@@ -3,15 +3,11 @@ package com.aniwag.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aniwag.domain.MemberVO;
-import com.aniwag.domain.SignUpDTO;
 import com.aniwag.service.SignService;
 
 import lombok.AllArgsConstructor;
@@ -26,12 +22,12 @@ public class SignController {
 
 	@PostMapping(value = "/SignUp", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<String> SignUp(@RequestBody SignUpDTO dto) {
+	public ResponseEntity<String> SignUp(@RequestBody MemberVO vo) {
 		
 		
-		log.info(dto);
+		log.info(vo);
 		
-		return service.SignUp(dto) == 1 ? new ResponseEntity<String>(HttpStatus.OK)
+		return service.SignUp(vo) == 1 ? new ResponseEntity<String>(HttpStatus.OK)
 				: new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 	}
 

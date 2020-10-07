@@ -21,9 +21,7 @@ import lombok.extern.log4j.Log4j;
 public class GPSMapperTests {
 	
 	@Setter(onMethod_ = @Autowired)
-	private GPSMapper mapper; 
-	
-	
+	private GPSMapper mapper; 	
 	
 	public void insertTest() {
 		
