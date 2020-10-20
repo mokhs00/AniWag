@@ -18,7 +18,7 @@ public interface GPSService {
 	// tracker 폐기
 
 	public int insert(GPSVO vo);
-	public List<GPSVO> getList(Long gps_tracker_no);
+	public List<GPSVO> getList(String gps_tracker_key);
 	
 	// 좌표로 주소 얻어오기
 	public void getAddress();

@@ -6,9 +6,9 @@
 <mapper namespace="com.aniwag.mapper.GPSMapper">
 
 	<insert id="insert">
-		INSERT INTO tbl_gps (gps_tracker_no, gps_latitude,
+		INSERT INTO tbl_gps (gps_tracker_key, gps_latitude,
 		gps_longitude)
-		VALUES(#{gps_tracker_no}, #{gps_latitude},
+		VALUES(#{gps_tracker_key}, #{gps_latitude},
 		#{gps_longitude})
 	</insert>
 
@@ -16,8 +16,8 @@
 		SELECT gps_latitude,
 		gps_longitude, gps_time
 		FROM tbl_gps
-		WHERE gps_tracker_no =
-		#{gps_tracker_no}
+		WHERE gps_tracker_key =
+		#{gps_tracker_key}
 		ORDER BY gps_time desc
 	</select>
 

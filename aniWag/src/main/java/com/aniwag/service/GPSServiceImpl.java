@@ -29,9 +29,9 @@ public class GPSServiceImpl implements GPSService {
 	}
 
 	@Override
-	public List<GPSVO> getList(Long gps_tracker_no) {
+	public List<GPSVO> getList(String gps_tracker_key) {
 		log.info("GPS read gps. . .");
-		return mapper.getList(gps_tracker_no);
+		return mapper.getList(gps_tracker_key);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class GPSServiceImpl implements GPSService {
 
 		return result == 1 ? vo : null;
 	}
-
+	
 	@Override
 	public void getAddress() {
 		try {

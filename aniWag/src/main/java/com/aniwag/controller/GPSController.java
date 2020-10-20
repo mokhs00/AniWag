@@ -35,7 +35,7 @@ public class GPSController {
 	// ex ) {"gps_tracker_no":1,"gps_latitude":0.0,"gps_longitude":0.0,"gps_time":0}
 	@PostMapping(value = "/insert", consumes = "application/json", produces = MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity<String> insert(@RequestBody GPSVO vo) {
-		log.info("GPS insert : " + vo.getGps_tracker_no());
+		log.info("GPS insert : " + vo.getGps_tracker_key());
 
 		int insertCount = service.insert(vo);
 
@@ -46,13 +46,13 @@ public class GPSController {
 
 	// ex )
 	// [{"gps_tracker_no":null,"gps_latitude":0.0,"gps_longitude":0.0,"gps_time":1595489778000}]
-	@GetMapping(value = "/{gps_tracker_no}", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE,
+	@GetMapping(value = "/{gps_tracker_key}", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<List<GPSVO>> getList(@PathVariable("gps_tracker_no") Long gps_tracker_no) {
+	public ResponseEntity<List<GPSVO>> getList(@PathVariable("gps_tracker_key") String gps_tracker_key) {
 
-		log.info("GPS read || gps_tracker_no : " + gps_tracker_no);
+		log.info("GPS read || gps_tracker_key : " + gps_tracker_key);
 
-		return new ResponseEntity<>(service.getList(gps_tracker_no), HttpStatus.OK);
+		return new ResponseEntity<>(service.getList(gps_tracker_key), HttpStatus.OK);
 
 	}
 
@@ -61,23 +61,12 @@ public class GPSController {
 	public ResponseEntity<GPSTrackerVO> register(@RequestBody GPSTrackerVO vo) {
 
 		log.info("GPS Tracker Register || vo : " + vo);
-
-		return service.register(vo) != null ? new ResponseEntity<>(service.register(vo), HttpStatus.OK)
+		
+		return service.register(vo) != null ? new ResponseEntity<>(vo, HttpStatus.OK)
 				: new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 
 	}
 	
-	@GetMapping("/testAddress")
-	public ResponseEntity<Object> getAddress() throws URISyntaxException{
-		URI url = new URI(
-				"https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords=129.1133567,35.2982640&sourcecrs=epsg:4326&output=json&orders=legalcode,admcode");
-		HttpHeaders httpHeaders = new HttpHeaders();
-		httpHeaders.add("X-NCP-APIGW-API-KEY-ID", "9r521tqyv7");
-		httpHeaders.add("X-NCP-APIGW-API-KEY", "UnL3yipzwuUlbYZX0XuoixpclG4Xpy6rcHMrdiSP");
-		httpHeaders.setLocation(url);
-		
-		return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
-	}
 	
 
 }

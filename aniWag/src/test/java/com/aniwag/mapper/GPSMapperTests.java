@@ -37,7 +37,7 @@ public class GPSMapperTests {
 	
 	
 	public void getListTest() {		
-		List<GPSVO> list = mapper.getList(1L);
+		List<GPSVO> list = mapper.getList("");
 		list.forEach(gps -> log.info(gps));
 		
 	}

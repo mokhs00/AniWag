@@ -12,7 +12,7 @@ public interface GPSMapper {
 	// 기기 삭제
 	public int register(GPSTrackerVO vo);
 	public int insert(GPSVO vo);
-	public List<GPSVO> getList(Long gps_tracker_no);
+	public List<GPSVO> getList(String gps_tracker_key);
 	
 	
 }

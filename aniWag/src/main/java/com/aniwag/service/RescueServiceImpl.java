@@ -37,7 +37,7 @@ public class RescueServiceImpl implements RescueService {
 
 		NotificationDTO notificationDTO = new NotificationDTO();		
 		notificationDTO.setRegistration_ids(mapper.getListAppkey(addr2));		
-		notificationDTO.getData().setTitle(addr2);
+		notificationDTO.getData().setTitle(addr2+rescueTitle);
 		notificationDTO.getData().setText("test");		
 		
 		log.info(notificationDTO);
