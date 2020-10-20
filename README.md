@@ -1,5 +1,5 @@
 # " AniWag" 
-# ICT 이브와 멘토링 참여 프로젝트
+# 애완동물 구조 시스템 
 # Spring 첫 프로젝트 
 # 첫 GitHub, Git 사용
 # 
