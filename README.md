@@ -1,5 +1,7 @@
-# " AniWag" 
-# ICT 이브와 멘토링 참여 프로젝트
-# Spring 첫 프로젝트 
-# 첫 GitHub, Git 사용
+# "AniWag" 
+**IoT 기기와 앱을 이용한 애완동물 구조 시스템**
+> IoT 기기의 GPS로 위치를 기록
+> 앱에서 구조요청 시 지역에 위치한 앱 유저에게 푸시알림
+## Spring 첫 프로젝트 
+## 첫 GitHub, Git 사용
 # 
