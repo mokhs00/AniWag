@@ -8,9 +8,9 @@ import lombok.Data;
 public class NotificationDTO {
 
 	private List<String> registration_ids;
-	private data data = new data();
+	private notification notification = new notification();
 	@Data
-	public class data {
+	public class notification {
 		private String title;
 		private String text;
 	}

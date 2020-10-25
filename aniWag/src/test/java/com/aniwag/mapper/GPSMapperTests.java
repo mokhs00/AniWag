@@ -28,7 +28,7 @@ public class GPSMapperTests {
 		GPSVO vo = new GPSVO();
 		vo.setGps_latitude(0);
 		vo.setGps_longitude(0);
-		vo.setGps_tracker_no(0L);
+		vo.setGps_tracker_key("a");
 				
 		
 		log.info(""+ mapper.insert(vo));
