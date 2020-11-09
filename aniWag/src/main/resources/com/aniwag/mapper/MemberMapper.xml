@@ -6,7 +6,7 @@
 <mapper namespace="com.aniwag.mapper.MemberMapper">
 
 	<insert id="create">
-		INSERT INTO TBL_MEMBER
+		INSERT INTO tbl_member
 		(mem_id, mem_password, mem_phone, mem_gender,
 		mem_name, mem_email, mem_addr1,
 		mem_addr2, mem_addr3, mem_appkey)
@@ -17,12 +17,12 @@
 	</insert>
 
 	<select id="read" resultType="com.aniwag.domain.MemberVO">
-		SELECT * FROM TBL_MEMBER
+		SELECT * FROM tbl_member
 		WHERE MEM_ID = #{mem_id}
 	</select>
 
 	<update id="update">
-		UPDATE TBL_MEMBER
+		UPDATE tbl_member
 		SET mem_password = #{mem_password}, mem_phone = #{mem_phone},
 		mem_gender = #{mem_gender}, mem_name = #{mem_name}, mem_email = #{mem_email}, 
 		mem_addr1 =	#{mem_addr1}, mem_addr2 = #{mem_addr2}, mem_addr3 = #{mem_addr3}, mem_appkey = #{mem_appkey}
@@ -31,7 +31,7 @@
 
 	<delete id="delete">
 	
-		DELETE FROM TBL_MEMBER
+		DELETE FROM tbl_member
 		WHERE mem_id = #{mem_id}
 	
 	</delete>	

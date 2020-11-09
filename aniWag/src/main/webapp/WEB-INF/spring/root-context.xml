@@ -11,9 +11,9 @@
 
 		<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName"
-			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+			value="com.mysql.cj.jdbc.Driver"></property>
 		<property name="jdbcUrl"
-			value="jdbc:log4jdbc:oracle:thin:@localhost:1521:XE"></property>
+			value="jdbc:mysql://localhost:3306/aniwag?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;allowPublicKeyRetrieval=true&amp;useSSL=false"></property>
 		<property name="username" value="carpedm"></property>
 		<property name="password" value="carpedm1q"></property>
 		

@@ -20,7 +20,8 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/")
 public class SignController {
 
-	SignService service;
+	SignService service;	
+
 
 	@PostMapping(value = "/SignUp", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE,
 			MediaType.APPLICATION_XML_VALUE })

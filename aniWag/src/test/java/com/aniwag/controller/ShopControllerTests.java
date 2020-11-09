@@ -17,14 +17,12 @@ import okhttp3.Response;
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
 public class ShopControllerTests {
-
 	private String ContentType = "application/json; charset=UTF-8";
 	public static final okhttp3.MediaType JSON = okhttp3.MediaType.get("application/json; charset=utf-8");
 	
 	
 	@Test
-	public void kakaoPayReadyPostTest() {
-		
+	public void kakaoPayReadyPostTest() {		
 		KakaoPayReadyDTO dto = new KakaoPayReadyDTO();
 		dto.setItem_name("testItem_name");
 		dto.setPartner_user_id("testPartner_user_id");

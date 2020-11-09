@@ -47,7 +47,7 @@ public class GPSMapperTests {
 		GPSTrackerVO vo = new GPSTrackerVO();		
 		String key = UUID.randomUUID().toString().replace("-", "");
 		key = key.substring(0,8);
-		vo.setGps_tracker_key(key);
+		vo.setGps_tracker_key("1");
 		int result =mapper.create(vo);
 		log.info("GPSTracker Create Result : " + result);
 

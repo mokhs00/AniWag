@@ -28,7 +28,7 @@ public class SignControllerTests {
 		Gson gson = new Gson();
 
 		MemberVO vo = new MemberVO();
-		vo.setMem_id("testId");
+		vo.setMem_id("testId1");
 		vo.setMem_password("1234");
 		vo.setMem_name("testName");
 		vo.setMem_addr1("test");
