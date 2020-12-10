@@ -17,7 +17,7 @@
 
 **AniWag = ani(animal) + wag(꼬리를 흔들다)**
 
-[https://youtu.be/JGC4BUyjobA](https://youtu.be/JGC4BUyjobA)
+시연 영상 : [https://youtu.be/JGC4BUyjobA](https://youtu.be/JGC4BUyjobA)
 
 > **AniWag**는 **애완동물 분실 시 신속한 구조**를 목적으로 합니다. 
 강아지에게 장착될 소형 IoT기기와 안드로이드 앱으로 구성되어 있습니다.
